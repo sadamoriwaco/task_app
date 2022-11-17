@@ -3,7 +3,7 @@
 {% block header %}
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
-    <h1 class="display-4">タスク</h1>
+    <h1 class="display-4">リマインダー</h1>
     <p class="lead">タスク一覧</p>
   </div>
 </div>
@@ -11,14 +11,14 @@
 
 {% block content %}
   <div class="container">
-      <a href="{% url 'create' %}" class="btn btn-primary">作成</a>
+      <a href="{% url 'task_app:create' %}" class="btn btn-primary">タスクの作成</a>
       {% for item in object_list %}
       <div class="card">
         <h5 class="cord-header">{{ item.category }}</h5>
         <div class="card-body">
           <h5 class="card-title">{{ item.title }}</h5>
           <h6 class="card-title">{{ item.content }}</h6>
-          <a href="{% url 'detail' item.pk %}" class="btn btn-primary">タスク詳細</a>
+          <a href="{% url 'task_app:detail' item.pk %}" class="btn btn-primary">タスク詳細</a>
         </div>
       </div>
       {% endfor %}
