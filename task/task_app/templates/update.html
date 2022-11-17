@@ -3,7 +3,7 @@
 {% block content %}
 <from action='' method='POST'>{% csrf_token %}
   {{ form.as_p }}
-    <input type="submit" value='更新する'>
+    <input type="submit" value='更新する' class="btn btn-primary">
   
   </from>
   {% endblock content %}
